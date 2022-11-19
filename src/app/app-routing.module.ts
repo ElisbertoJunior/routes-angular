@@ -9,10 +9,15 @@ const routes: Routes = [
     component: TitleComponent,
     pathMatch: 'full'
   },
+  //portifolio
+  //portifolio/1
   {
-    path: 'portifolio/:id',
-    component: CardComponent,
-    pathMatch: 'prefix'
+    path: 'portifolio', component: CardComponent, children: [
+      {
+        path: ':id',
+        component: CardComponent
+      },
+    ]
   },
   {
     path: '**', redirectTo: ''
